@@ -29,18 +29,13 @@ int main()
   return 0;
 }
 
-// Get input from user mesh, domain, material properties etc.,
+// Assign mesh, domain, material properties etc.,
 void get_input(input &user_input)
 {
-  cout<<endl<<"**********All the inputs in a line must be separated by a space***************"<<endl;
-  cout<<endl<<"Enter length of X Y Z axis of the domain (m)  : "; 
-  cin>>user_input.x_length>>user_input.y_length>>user_input.z_length;
-  cout<<endl<<"Enter number of meshes in X Y Z axis           : "; 
-  cin>>user_input.x_count>>user_input.y_count>>user_input.z_count;
-  cout<<endl<<"Enter the efficiency voltage(V) current(A) velocity(m/s) of heat source: "; 
-  cin>>user_input.eff>>user_input.V>>user_input.I>>user_input.vel;
-  cout<<endl<<"Enter the thermal conductivity(W/m-K) diffusivity(m2/s) initial_temperature(K) of the domain: "; 
-  cin>>user_input.k>>user_input.a>>user_input.To;
+  user_input.x_length=0.05; user_input.y_length=0.05; user_input.z_length=0.01;
+  user_input.x_count=200; user_input.y_count=200; user_input.z_count=2;
+  user_input.eff = 1; user_input.V= 60000; user_input.I=0.02; user_input.vel=0.0004;
+  user_input.k = 30; user_input.a = 0.00000356; user_input.To=1000;
 }
 
 //Initialize the domain by calculating the coordinates and assigning initial temperature of the domain
